@@ -2,11 +2,13 @@
 
 class ArrayList
   def initialize
-    @storage = []
+    @storage = [0,0,0,0,0,0,0,0,0,0]
+    @size = 0
   end
 
   # Adds _value_ at the end of the list
   def add(value)
+    raise "bad things" if @size == @storage.length
     @storage[@size] = value
     @size += 1
   end
@@ -26,6 +28,7 @@ class ArrayList
 
   def size
     return @size
+    # OTHER OPTION
     # count = 0
     # @size.times do
     #   count += 1
@@ -34,6 +37,7 @@ class ArrayList
   end
 
   def max
+    raise "bad things" if @size == 0
     biggest = @storage[0]
     @size.times do |i|
       if @storage[i] > biggest
